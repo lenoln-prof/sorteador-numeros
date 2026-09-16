@@ -101,7 +101,7 @@ body::before {
     cursor: pointer;
 
     &.desabilitado {
-        background: #ec0808;
+        background: #6f6f70;
         cursor: not-allowed;
     }
 }
