@@ -99,17 +99,11 @@ body::before {
     font-weight: 700;
     border: none;
     cursor: pointer;
-}
 
-.container__botao-desabilitado {
-    border-radius: 16px;
-    background: #6f6f70;
-    padding: 16px 24px;
-    font-size: 24px;
-    width: 100%;
-    font-weight: 700;
-    border: none;
-    cursor: not-allowed;
+    &.desabilitado {
+        background: #6f6f70;
+        cursor: not-allowed;
+    }
 }
 
 h1 {
