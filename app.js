@@ -15,12 +15,31 @@ document.addEventListener('DOMContentLoaded', () => {
 botaoSortear.addEventListener('click', sortear);
 botaoReiniciar.addEventListener('click', reiniciar);
 
+
+campoFim.addEventListener('keypress', (event) => {
+    if (event.key === "Enter") sortear();
+});
+
+
 function sortear() {
     verificarCampos();
 }
 
+
 function reiniciar() {
-    // restauração do estado inicial
+    campoQuantidade.value = '';
+    campoInicio.value = '';
+    campoFim.value = '';
+
+    resultado.innerHTML =
+        '<label class="texto__paragrafo">' +
+        'Números sorteados: nenhum até agora' +
+        '</label>';
+
+    botaoReiniciar.disabled = true;
+    botaoReiniciar.classList.add('desabilitado');
+
+    campoQuantidade.focus();
 }
 
 function verificarCampos() {
@@ -74,5 +93,11 @@ function sortearNumeros() {
         '<label class="texto__paragrafo">' +
         `Números sorteados: ${sorteados.join(' - ')}` +
         '</label>';
+
+    botaoReiniciar.disabled = false;
+    botaoReiniciar.classList.remove(
+        'desabilitado'
+    );
+    botaoReiniciar.classList.add('container__botao');
 
 }
